@@ -14,8 +14,8 @@ export default function App() {
         <Route Component={DefaultLayout}>
           <Route index element={<HomePage />} />
           <Route path="/:id" element={<Travelpage />} />
-          <Route path="/:id/:username" element={<TravelerPage />} />
           <Route path="/address-book" element={<AddressBookPage />} />
+          <Route path="/traveler/:id" element={<TravelerDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
