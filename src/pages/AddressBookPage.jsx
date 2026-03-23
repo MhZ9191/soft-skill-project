@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { travels, travelers } from "../data/data";
+import { travelers } from "../data/data";
 
 export default function AddressBookPage() {
   const travelersSorted = [...travelers];
@@ -61,11 +61,15 @@ export default function AddressBookPage() {
                     </span>
                     <div
                       className={
-                        el.id === seeInfo ? "visualize" : "hidden-info"
+                        el.id === seeInfo
+                          ? "info visualize"
+                          : "info hidden-info"
                       }
                     >
                       <div>{el.telefono}</div>
-                      <div></div>
+                      <div>
+                        <i className="bi bi-telephone-fill"></i>
+                      </div>
                     </div>
                   </div>
                 );
