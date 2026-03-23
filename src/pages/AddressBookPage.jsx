@@ -26,7 +26,11 @@ export default function AddressBookPage() {
 
   const [seeInfo, setSeeInfo] = useState(null);
   const handleInfo = (id_user) => {
-    setSeeInfo(id_user);
+    if (seeInfo == id_user) {
+      setSeeInfo(null);
+    } else {
+      setSeeInfo(id_user);
+    }
   };
 
   return (
