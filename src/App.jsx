@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage";
 import Travelpage from "./pages/TravelPage";
-import TravelerPage from "./pages/TravelerPage";
+import TravelerDetailPage from "./pages/TravelerDetailPage";
 import AddressBookPage from "./pages/AddressBookPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import "bootstrap-icons/font/bootstrap-icons.css";
