@@ -14,9 +14,18 @@ export default function TravelDetailPage() {
     <main className="container py-5">
       <h1 className="fw-bold text-primary">I dettagli del tuo viaggio</h1>
 
-      <div className="travel-title my-4">
+      <div
+        className="travel-title my-4 p-4 text-light"
+        style={{
+          minHeight: "300px",
+          textShadow: "0 1px 3px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.6)",
+          backgroundImage: `url(${travelDetail.img})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <h2>{travelDetail.to}</h2>
-        <p className="text-muted">
+        <p className="text-light fs-5">
           <i className="bi bi-calendar-event me-2"></i>
           Dal: {travelDetail.start} al: {travelDetail.end}
         </p>
@@ -32,9 +41,7 @@ export default function TravelDetailPage() {
               Il tuo soggiorno
             </h4>
 
-            <h6 className="card-subtitle mb-2 text-body-secondary">
-              {travelDetail.hotel}
-            </h6>
+            <h6 className="card-subtitle mb-2">{travelDetail.hotel}</h6>
 
             <p className="card-text">
               QUI POTREMMO INSERIRE UNA BREVE DESCRIZIONE DELL'HOTEL
@@ -54,9 +61,7 @@ export default function TravelDetailPage() {
               Il tuo accompagnatore
             </h4>
 
-            <h6 className="card-subtitle mb-2 text-body-secondary">
-              {travelDetail.companion}
-            </h6>
+            <h6 className="card-subtitle mb-2">{travelDetail.companion}</h6>
 
             <p className="card-text">
               QUI POTREMMO INSERIRE UNA BREVE DESCRIZIONE DELL'ACCOMPAGNATORE
@@ -77,8 +82,8 @@ export default function TravelDetailPage() {
             Il tuo gruppo
           </h5>
 
-          <h6 className="card-subtitle mb-2 text-body-secondary">
-            Numero partecipanti: {travelDetail.travelers.length}
+          <h6 className="card-subtitle mb-2">
+            <b>Numero partecipanti:</b> {travelDetail.travelers.length}
           </h6>
 
           <p className="card-text">
