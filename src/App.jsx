@@ -4,6 +4,7 @@ import Travelpage from "./pages/TravelPage";
 import TravelerPage from "./pages/TravelerPage";
 import AddressBookPage from "./pages/AddressBookPage";
 import DefaultLayout from "./layouts/DefaultLayout";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 
 export default function App() {
