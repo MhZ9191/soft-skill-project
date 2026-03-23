@@ -16,6 +16,10 @@ export default function TravelDetailPage() {
   return (
     <main className="container py-5">
       <h1 className="fw-bold text-primary">I dettagli del tuo viaggio</h1>
+      <p className="text-muted mb-0">
+        In questa pagina puoi trovare tutti i dettagli relativi al tuo viaggio a{" "}
+        {travelDetail.to}
+      </p>
 
       <div
         className="travel-jumbo my-4 p-4 text-light border rounded-4"
