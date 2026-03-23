@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage";
 import Travelpage from "./pages/TravelPage";
 import TravelerDetailPage from "./pages/TravelerDetailPage";
+import TravelDetailPage from "./pages/TravelDetailPage";
 import AddressBookPage from "./pages/AddressBookPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -15,7 +16,8 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="/:id" element={<Travelpage />} />
           <Route path="/address-book" element={<AddressBookPage />} />
-          <Route path="/traveler/:id" element={<TravelerDetailPage />} />
+          <Route path="/traveldetail/:id" element={<TravelDetailPage />} />
+          <Route path="/traveler/:id" element={<TravelDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
