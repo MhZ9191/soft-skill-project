@@ -87,10 +87,10 @@ export default function TravelDetailPage() {
       {/* LISTA VIAGGIATORI */}
       <div className="travelers-list my-4">
         <div className="card border-0 shadow-sm p-4">
-          <h5 className="card-title text-primary mb-3">
+          <h4 className="card-title text-primary mb-3">
             <i className="bi bi-people-fill me-2"></i>
             Il tuo gruppo
-          </h5>
+          </h4>
 
           <h5 className="card-subtitle mb-2">
             <b>Numero partecipanti:</b> {travelDetail.travelers.length}
