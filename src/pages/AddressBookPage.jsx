@@ -1,0 +1,74 @@
+import { useEffect, useState } from "react";
+import { travels, travelers } from "../data/data";
+
+export default function AddressBookPage() {
+  const travelersSorted = [...travelers];
+  travelersSorted.sort((a, b) => a.cognome.localeCompare(b.cognome));
+
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState(undefined);
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const output = () => {
+    if (!search) return setResults(travelersSorted);
+    const tempo = travelersSorted.filter(
+      (el) =>
+        el.cognome.toLowerCase().includes(search.toLowerCase()) ||
+        el.nome.toLowerCase().includes(search.toLowerCase()),
+    );
+    setResults(tempo);
+  };
+
+  useEffect(output, [search]);
+
+  const [seeInfo, setSeeInfo] = useState(null);
+  const handleInfo = (id_user) => {
+    setSeeInfo(id_user);
+  };
+
+  return (
+    <main>
+      <section>
+        <div>
+          <fieldset className="field-search">
+            <legend>Search filter</legend>
+            <input
+              type="text"
+              name="search"
+              id="search-filter"
+              value={search}
+              onChange={handleSearch}
+            />
+          </fieldset>
+          <div>
+            {results &&
+              results.map((el) => {
+                return (
+                  <div
+                    className="div-add"
+                    key={el.id}
+                    onClick={() => handleInfo(el.id)}
+                  >
+                    <span>
+                      {el.cognome} {el.nome}
+                    </span>
+                    <div
+                      className={
+                        el.id === seeInfo ? "visualize" : "hidden-info"
+                      }
+                    >
+                      <div>{el.telefono}</div>
+                      <div></div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

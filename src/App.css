@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ADDRESS-BOOK */
+.div-add:hover {
+  cursor: pointer;
+}
+.hidden-info {
+  display: none;
+}
+.visualize {
+  display: block;
+}
