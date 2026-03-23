@@ -14,17 +14,13 @@ export default function DefaultLayout() {
             <Link className="nav-link" aria-current="page" to="/TravelPage">
               Viaggi
             </Link>
-            <Link
-              className="nav-link"
-              aria-current="page"
-              to="/AddressBookPage"
-            >
+            <Link className="nav-link" aria-current="page" to="/address-book">
               Rubrica
             </Link>
           </div>
         </div>
       </nav>
-      
+
       <main className="container mt-4">
         <Outlet />
       </main>
