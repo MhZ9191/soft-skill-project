@@ -11,9 +11,6 @@ export default function DefaultLayout() {
             <Link className="nav-link" aria-current="page" to="/">
               Home
             </Link>
-            <Link className="nav-link" aria-current="page" to="/TravelPage">
-              Viaggi
-            </Link>
             <Link className="nav-link" aria-current="page" to="/address-book">
               Rubrica
             </Link>

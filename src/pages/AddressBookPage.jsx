@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { travelers } from "../data/data";
 import AddTravel from "../components/AddTravel";
+import Addpartecipant from "../components/AddPartecipant";
 
 export default function AddressBookPage() {
   const travelersSorted = [...travelers];
@@ -39,13 +40,14 @@ export default function AddressBookPage() {
       <section>
         <div>
           <fieldset className="field-search">
-            <legend>Search filter</legend>
+            <legend>Search</legend>
             <input
               type="text"
               name="search"
               id="search-filter"
               value={search}
               onChange={handleSearch}
+              placeholder="Type here"
             />
           </fieldset>
           <div>
@@ -77,6 +79,7 @@ export default function AddressBookPage() {
               })}
           </div>
           <AddTravel />
+          <Addpartecipant />
         </div>
       </section>
     </main>

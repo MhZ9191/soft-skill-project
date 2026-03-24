@@ -1,6 +1,9 @@
-import { travels, travelers } from "../data/data";
+import { useNewTrav } from "../contexts/newtravelerContext";
+import { Link } from "react-router";
 
 export default function HomePage() {
+  const { viaggi } = useNewTrav();
+
   // Funzione per formattare la data in stile italiano
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("it-IT");
@@ -25,46 +28,35 @@ export default function HomePage() {
 
       {/* Griglia Viaggi */}
       <div className="row g-4">
-        {travels.map((travel) => (
+        {viaggi.map((travel) => (
           <div key={travel.id} className="col-12 col-md-6 col-lg-4">
             <div className="card h-100 border-0 shadow-sm overflow-hidden transition-card">
-              {/* IMMAGINE DEL VIAGGIO */}
-              {/* Usiamo travel.img che arriva dal tuo array. 
-                  Se l'immagine non esiste, usiamo un placeholder di servizio. */}
-              <img
-                src={
-                  travel.img.startsWith("http") ? travel.img : `/${travel.img}`
-                }
-                className="card-img-top"
-                alt={travel.to}
-                style={{ height: "200px", objectFit: "cover" }}
-              />
-
               {/* Contenuto Card */}
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title fw-bold text-dark">{travel.to}</h5>
+              <div className="card-body">
+                <h5 className="card-title fw-bold">{travel.to}</h5>
 
                 <div className="card-text small text-muted mb-4">
                   <div className="mb-2">
-                    <i className="bi bi-calendar-event me-2 text-primary"></i>
+                    <i className="bi bi-calendar-event me-2"></i>
                     {formatDate(travel.start)} - {formatDate(travel.end)}
                   </div>
                   <div className="mb-2">
-                    <i className="bi bi-geo-alt me-2 text-primary"></i>
+                    <i className="bi bi-geo-alt me-2"></i>
                     {travel.hotel}
                   </div>
                   <div>
-                    <i className="bi bi-person-check me-2 text-primary"></i>
+                    <i className="bi bi-person-check me-2"></i>
                     Accompagnatore: <strong>{travel.companion}</strong>
                   </div>
                 </div>
 
-                {/* Pulsante per entrare nel dettaglio (Rubrica) */}
-                <button className="btn btn-outline-primary w-100 fw-semibold mt-auto">
-                  Apri Rubrica Contatti
-                </button>
+                  {/* Pulsante per entrare nel dettaglio (Rubrica) */}
+                  <button className="btn btn-outline-primary w-100 fw-semibold mt-auto">
+                    See more info
+                  </button>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
