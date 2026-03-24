@@ -81,13 +81,13 @@ export default function TravelDetailPage() {
             {/* Valutiamo logo hotel + hotel rating */}
             <h5 className="card-subtitle mb-2">{travelDetail.hotel.name}</h5>
             <div className="hotel-info">
-              <address className="card-text">
+              <address className="card-text my-2">
                 <b>
                   <i class="bi bi-map-fill"></i> Indirizzo:
                 </b>{" "}
                 {travelDetail.hotel.address} <br></br>
                 <b>
-                  <i class="bi bi-telephone-fill"></i> Telefono:
+                  <i class="bi bi-telephone-fill text-dark"></i> Telefono:
                 </b>{" "}
                 {travelDetail.hotel.phone}
               </address>
@@ -106,15 +106,18 @@ export default function TravelDetailPage() {
               Il tuo accompagnatore
             </h4>
 
-            <h5 className="card-subtitle mb-2">{travelDetail.companion}</h5>
+            <h5 className="card-subtitle mb-2">
+              {travelDetail.companion.name}
+            </h5>
             {/* Valutiamo propic accompagnatore */}
             <p className="card-text">
-              QUI POTREMMO INSERIRE UNA BREVE DESCRIZIONE DELL'ACCOMPAGNATORE
+              <address className="card-text my-2">
+                <b>
+                  <i class="bi bi-telephone-fill text-dark"></i> Telefono:
+                </b>{" "}
+                {travelDetail.companion.phone}
+              </address>
             </p>
-
-            <Link to="#" className="card-link">
-              PROFILO ACCOMPAGNATORE
-            </Link>
           </div>
         </div>
       </div>

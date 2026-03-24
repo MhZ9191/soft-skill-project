@@ -54,7 +54,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <i className="bi bi-person-check me-2"></i>
-                    Accompagnatore: <strong>{travel.companion}</strong>
+                    Accompagnatore: <strong>{travel.companion.name}</strong>
                   </div>
                 </div>
               </div>
