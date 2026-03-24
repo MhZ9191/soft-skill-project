@@ -124,23 +124,32 @@ export default function TravelDetailPage() {
             <b>Numero partecipanti:</b> {travelDetail.travelers.length}
           </h5>
 
-          <div className="card-text">
+          <div className="container">
             <b>Partecipanti:</b>{" "}
-            {travelDetail.travelers.map((el, i) => {
-              return (
-                <div key={i} className="link-info-test">
-                  <span className="link-detail" onClick={() => handlePage(el)}>
-                    {el}
-                  </span>
-                  <div
-                    className="bi bi-dash-square-fill"
-                    onClick={() => removeUser(el)}
-                  ></div>
-                </div>
-              );
-            })}
+            <div className="d-flex flex-wrap gap-2 mt-2">
+              {travelDetail.travelers.map((el, i) => {
+                return (
+                  <div key={i} className="border rounded p-2 bg-light">
+                    <div className="d-flex  align-items-center gap-3">
+                      <span
+                        className="link-detail"
+                        onClick={() => handlePage(el)}
+                      >
+                        {el}
+                      </span>
+                      <div
+                        className="bi bi-dash-square-fill text-danger"
+                        onClick={() => removeUser(el)}
+                      ></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <Addpartecipant idTravel={Number(id)} />
+          <div className="border rounded p-2 bg-light mt-2">
+            <Addpartecipant idTravel={Number(id)} />
+          </div>
         </div>
       </div>
     </main>
