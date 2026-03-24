@@ -72,3 +72,11 @@
   display: flex;
   gap: 10px;
 }
+
+.bi-dash-square-fill {
+  color: #0d6efd;
+}
+
+.bi-plus-square-fill {
+  color: #0d6efd;
+}
