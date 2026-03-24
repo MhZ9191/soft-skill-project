@@ -66,7 +66,7 @@ export default function AddressBookPage() {
                           : "info hidden-info"
                       }
                     >
-                      <div>{el.telefono}</div>
+                      <div>{el.phone}</div>
                       <div>
                         <i className="bi bi-telephone-fill"></i>
                       </div>
