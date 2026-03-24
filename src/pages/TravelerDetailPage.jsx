@@ -29,7 +29,7 @@ export default function TravelerDetailPage() {
               <div className="mb-3 d-flex align-items-center">
                 <div>
                   <label className="text-muted small d-block">Telefono</label>
-                  <i class="bi bi-telephone p-2 pe-none"></i>
+                  <i className="bi bi-telephone p-2 pe-none"></i>
                   <span className="fw-medium">{travelerDetail.telefono}</span>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function TravelerDetailPage() {
                   <label className="text-muted small d-block">
                     Codice Fiscale
                   </label>
-                  <i class="bi bi-file-person p-2 pe-none"></i>
+                  <i className="bi bi-file-person p-2 pe-none"></i>
                   <span className="fw-medium text-uppercase">
                     {travelerDetail.codice_fiscale}
                   </span>
@@ -53,7 +53,7 @@ export default function TravelerDetailPage() {
               <div className="mb-0 d-flex align-items-center">
                 <div>
                   <label className="text-muted small d-block">Email</label>
-                  <i class="bi bi-envelope p-2 pe-none"></i>
+                  <i className="bi bi-envelope p-2 pe-none"></i>
                   <span className="fw-medium">{travelerDetail.mail}</span>
                 </div>
               </div>
