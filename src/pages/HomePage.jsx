@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { travels } from "../data/data";
 
 export default function HomePage() {
@@ -55,9 +56,9 @@ export default function HomePage() {
                 </div>
 
                 {/* Bottone */}
-                <button className="btn btn-outline-primary w-100 fw-semibold mt-auto">
-                  Apri Rubrica Contatti
-                </button>
+                <Link className="btn btn-outline-primary mt-auto rounded-pill" to={`/traveldetail/${travel.id}`}>
+                  Dettaglio Viaggio
+                </Link>
               </div>
             </div>
           </div>
