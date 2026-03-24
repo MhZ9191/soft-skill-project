@@ -1,10 +1,5 @@
-
-import { Link } from "react-router";
-
-
-
-import { travels } from "../data/data";
 import { useNewTrav } from "../contexts/newtravelerContext";
+import { Link } from "react-router-dom";
 export default function HomePage() {
   const { viaggi } = useNewTrav();
   // Funzione per formattare la data in stile italiano
@@ -64,7 +59,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Bottone */}
-                <Link className="btn btn-outline-primary mt-auto rounded-pill" to={`/traveldetail/${travel.id}`}>
+                <Link
+                  className="btn btn-outline-primary mt-auto rounded-pill"
+                  to={`/traveldetail/${travel.id}`}
+                >
                   Dettaglio Viaggio
                 </Link>
               </div>
