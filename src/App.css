@@ -93,7 +93,7 @@
   );
 
   background-size: 300% 300%;
-  animation: spin 8s ease-in-out infinite;
+  animation: spin 14s ease-in-out infinite;
 }
 
 @keyframes spin {
