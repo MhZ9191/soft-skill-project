@@ -20,7 +20,7 @@ export default function TravelerDetailPage() {
           <div className="card shadow-sm border-0 rounded-4 overflow-hidden">
             <div className="card-header bg-primary bg-gradient text-white p-4 text-center">
               <h2 className="h4 mb-0">
-                {travelerDetail.nome} {travelerDetail.cognome}
+                {travelerDetail.name} {travelerDetail.cognome}
               </h2>
               <small className="opacity-75">Scheda Viaggiatore</small>
             </div>
