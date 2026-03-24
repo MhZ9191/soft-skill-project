@@ -57,7 +57,7 @@ export default function AddressBookPage() {
                       className="spec-span"
                       onClick={() => handleInfo(el.id)}
                     >
-                      {el.cognome} {el.nome}
+                      {el.cognome} {el.name}
                     </span>
                     <div
                       className={
