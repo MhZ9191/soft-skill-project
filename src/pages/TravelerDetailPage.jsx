@@ -1,12 +1,14 @@
 import { useParams } from "react-router";
 import { travelers } from "../data/data";
-
+import { useNewTrav } from "../contexts/newtravelerContext";
 export default function TravelerDetailPage() {
   // recupero l'id
   const { id } = useParams();
 
+  const { viaggiatori } = useNewTrav();
+
   //Recupero il singolo viaggiatore dall'array tramite l'ID ottenuto dai parametri
-  const travelerDetail = travelers.find((traveler) => traveler.id == id);
+  const travelerDetail = viaggiatori.find((traveler) => traveler.id == id);
 
   // se non trovo il viaggiatore ritorno "viaggiatore non trovato"
   if (!travelerDetail) return <p>Viaggiatore non trovato!</p>;

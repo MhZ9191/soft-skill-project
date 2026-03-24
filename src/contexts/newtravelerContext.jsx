@@ -5,7 +5,6 @@ const NewTravelerContext = createContext();
 function NewTravProvider({ children }) {
   const [viaggi, setViaggi] = useState(travels);
   const [viaggiatori, setViaggiatori] = useState(travelers);
-  const [specifyTravel, setSpecifyTravel] = useState(null);
 
   const createIdTravel = () => {
     const ids = viaggi.map((el) => el.id);
@@ -24,8 +23,6 @@ function NewTravProvider({ children }) {
     viaggi,
     viaggiatori,
     setViaggiatori,
-    setSpecifyTravel,
-    specifyTravel,
   };
   return (
     <NewTravelerContext.Provider value={values}>
