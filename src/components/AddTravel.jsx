@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { companions } from "../data/data";
 import { useNewTrav } from "../contexts/newtravelerContext";
-import { useNavigate } from "react-router-dom"; // Importiamo il navigatore
+import { useNavigate } from "react-router"; // Importiamo il navigatore
 
 export default function AddTravel() {
   const { createIdTravel, setViaggi, viaggi } = useNewTrav();
