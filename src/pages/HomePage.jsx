@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="container py-5">
       {/* Intestazione */}
-      <header className="d-flex justify-content-between align-items-center mb-5">
+      <header className="d-flex justify-content-between align-items-center mb-5 border-bottom pb-4">
         <div>
           <h1 className="fw-bold text-primary">I Miei Viaggi</h1>
           <p className="text-muted mb-0">
@@ -28,21 +28,33 @@ export default function HomePage() {
         {travels.map((travel) => (
           <div key={travel.id} className="col-12 col-md-6 col-lg-4">
             <div className="card h-100 border-0 shadow-sm overflow-hidden transition-card">
+              {/* IMMAGINE DEL VIAGGIO */}
+              {/* Usiamo travel.img che arriva dal tuo array. 
+                  Se l'immagine non esiste, usiamo un placeholder di servizio. */}
+              <img
+                src={
+                  travel.img.startsWith("http") ? travel.img : `/${travel.img}`
+                }
+                className="card-img-top"
+                alt={travel.to}
+                style={{ height: "200px", objectFit: "cover" }}
+              />
+
               {/* Contenuto Card */}
-              <div className="card-body">
-                <h5 className="card-title fw-bold">{travel.to}</h5>
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title fw-bold text-dark">{travel.to}</h5>
 
                 <div className="card-text small text-muted mb-4">
                   <div className="mb-2">
-                    <i className="bi bi-calendar-event me-2"></i>
+                    <i className="bi bi-calendar-event me-2 text-primary"></i>
                     {formatDate(travel.start)} - {formatDate(travel.end)}
                   </div>
                   <div className="mb-2">
-                    <i className="bi bi-geo-alt me-2"></i>
+                    <i className="bi bi-geo-alt me-2 text-primary"></i>
                     {travel.hotel}
                   </div>
                   <div>
-                    <i className="bi bi-person-check me-2"></i>
+                    <i className="bi bi-person-check me-2 text-primary"></i>
                     Accompagnatore: <strong>{travel.companion}</strong>
                   </div>
                 </div>
@@ -59,8 +71,13 @@ export default function HomePage() {
 
       {/* Stile inline rapido per l'effetto hover (stile Boolean) */}
       <style>{`
-        .transition-card { transition: transform 0.3s ease; }
-        .transition-card:hover { transform: translateY(-5px); }
+        .transition-card { 
+          transition: all 0.3s ease; 
+        }
+        .transition-card:hover { 
+          transform: translateY(-5px); 
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
       `}</style>
     </div>
   );
