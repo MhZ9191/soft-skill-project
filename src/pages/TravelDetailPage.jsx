@@ -82,8 +82,14 @@ export default function TravelDetailPage() {
             <h5 className="card-subtitle mb-2">{travelDetail.hotel.name}</h5>
             <div className="hotel-info">
               <address className="card-text">
-                <b>Indirizzo:</b> {travelDetail.hotel.address} <br></br>
-                <b>Telefono:</b> {travelDetail.hotel.phone}
+                <b>
+                  <i class="bi bi-map-fill"></i> Indirizzo:
+                </b>{" "}
+                {travelDetail.hotel.address} <br></br>
+                <b>
+                  <i class="bi bi-telephone-fill"></i> Telefono:
+                </b>{" "}
+                {travelDetail.hotel.phone}
               </address>
               <Link to={travelDetail.hotel.website} className="card-link">
                 Sito web
