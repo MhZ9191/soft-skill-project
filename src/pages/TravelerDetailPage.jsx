@@ -30,7 +30,7 @@ export default function TravelerDetailPage() {
                 <div>
                   <label className="text-muted small d-block">Telefono</label>
                   <i className="bi bi-telephone p-2 pe-none"></i>
-                  <span className="fw-medium">{travelerDetail.telefono}</span>
+                  <span className="fw-medium">{travelerDetail.phone}</span>
                 </div>
               </div>
 
