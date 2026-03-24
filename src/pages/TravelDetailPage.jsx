@@ -27,25 +27,6 @@ export default function TravelDetailPage() {
     navigate("/traveler/" + idUser.id);
   };
 
-  function languageToFlag(lang) {
-    switch (lang.toLowerCase()) {
-      case "Italiano":
-        return "🇮🇹";
-      case "Inglese":
-        return "🇬🇧";
-      case "Francese":
-        return "🇫🇷";
-      case "Spagnolo":
-        return "🇪🇸";
-      case "Tedesco":
-        return "🇩🇪";
-      case "Cinese":
-        return "🇨🇳";
-      default:
-        return "🏳️"; // bandiera bianca per lingua sconosciuta
-    }
-  }
-
   const removeUser = (currentUser) => {
     setViaggi(
       viaggi.map((el) => {
@@ -61,12 +42,16 @@ export default function TravelDetailPage() {
   };
 
   return (
-    <main className="container py-5">
-      <h1 className="fw-bold text-primary">I dettagli del tuo viaggio</h1>
-      <p className="text-muted mb-0">
-        In questa pagina puoi trovare tutti i dettagli relativi al tuo viaggio a{" "}
-        {travelDetail.to}
-      </p>
+    <div className="container py-5">
+      <header>
+        <div className="border-bottom pb-4">
+          <h1 className="fw-bold text-primary">I dettagli del tuo viaggio</h1>
+          <p className="text-muted mb-0">
+            In questa pagina puoi trovare tutti i dettagli relativi al tuo
+            viaggio a {travelDetail.to}
+          </p>
+        </div>
+      </header>
 
       <div
         className="travel-jumbo my-4 p-4 text-light border rounded-4"
@@ -102,11 +87,11 @@ export default function TravelDetailPage() {
             <div className="hotel-info">
               <address className="card-text my-2">
                 <b>
-                  <i class="bi bi-map-fill"></i> Indirizzo:
+                  <i className="bi bi-map-fill"></i> Indirizzo:
                 </b>{" "}
                 {travelDetail.hotel.address} <br></br>
                 <b>
-                  <i class="bi bi-telephone-fill text-dark"></i> Telefono:
+                  <i className="bi bi-telephone-fill text-dark"></i> Telefono:
                 </b>{" "}
                 {travelDetail.hotel.phone}
               </address>
@@ -131,11 +116,11 @@ export default function TravelDetailPage() {
             {/* Valutiamo propic accompagnatore */}
             <p className="card-text">
               <b>
-                <i class="bi bi-chat-dots-fill"></i> Lingue parlate:{" "}
+                <i className="bi bi-chat-dots-fill"></i> Lingue parlate:{" "}
               </b>{" "}
               {travelDetail.companion.languages.join(", ")} <br></br>
               <b>
-                <i class="bi bi-telephone-fill text-dark"></i> Telefono:
+                <i className="bi bi-telephone-fill text-dark"></i> Telefono:
               </b>{" "}
               {travelDetail.companion.phone}
             </p>
@@ -183,6 +168,6 @@ export default function TravelDetailPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
