@@ -51,15 +51,16 @@ export default function TravelDetailPage() {
               Il tuo soggiorno
             </h4>
             {/* Valutiamo logo hotel + hotel rating */}
-            <h5 className="card-subtitle mb-2">{travelDetail.hotel}</h5>
-
-            <p className="card-text">
-              QUI POTREMMO INSERIRE UNA BREVE DESCRIZIONE DELL'HOTEL
-            </p>
-
-            <Link to="#" className="card-link">
-              LINK HOTEL
-            </Link>
+            <h5 className="card-subtitle mb-2">{travelDetail.hotel.name}</h5>
+            <div className="hotel-info">
+              <address className="card-text">
+                <b>Indirizzo:</b> {travelDetail.hotel.address} <br></br>
+                <b>Telefono:</b> {travelDetail.hotel.phone}
+              </address>
+              <Link to={travelDetail.hotel.website} className="card-link">
+                Sito web
+              </Link>
+            </div>
           </div>
         </div>
 

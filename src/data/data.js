@@ -24,7 +24,13 @@ const travels = [
     img: "/travel-images/paris.jpg",
     price: 850,
     companion: "Giovanni Ricci",
-    hotel: "Hotel Lumiere",
+    hotel: {
+      name: "Hotel Lumière",
+      address: "110 Rue Damrémont - 75018 Paris, Francia",
+      phone: "+33 1 42 64 25 75",
+      website: "https://www.hotel-lumieres.com/",
+      image: "WIP",
+    },
   },
   {
     id: 2,
@@ -52,7 +58,13 @@ const travels = [
     img: "/travel-images/tokyo.jpg",
     price: 2100,
     companion: "Giovanni Ricci",
-    hotel: "Sakura Inn",
+    hotel: {
+      name: "Hotel Lumière",
+      address: "3-43-15 Sendagi Bunkyo-ku - 113-0022 Tokyo, Japan",
+      phone: "+81-3-5685-1200",
+      website: "https://www.sakura-hotel.co.jp/",
+      image: "WIP",
+    },
   },
   {
     id: 3,
@@ -79,7 +91,13 @@ const travels = [
     img: "/travel-images/newyork.jpg",
     price: 1800,
     companion: "Alessandro Villa",
-    hotel: "Manhattan Stay",
+    hotel: {
+      name: "Manhattan Stay",
+      address: "250 W 43rd St, New York, NY 10036, USA",
+      phone: "+1 212-555-7890",
+      website: "https://www.manhattanstay.com/",
+      image: "WIP",
+    },
   },
   {
     id: 4,
@@ -106,7 +124,13 @@ const travels = [
     img: "/travel-images/barcelona.jpg",
     price: 600,
     companion: "Francesca Bianchi",
-    hotel: "Barcelona Center Hotel",
+    hotel: {
+      name: "Hotel Barcelona Center",
+      address: "Balmes, 103 - 08008, Barcelona, Spain",
+      phone: "+34 900 202 000",
+      website: "https://www.hotelbarcelonacenter.com/",
+      image: "WIP",
+    },
   },
   {
     id: 5,
@@ -133,7 +157,13 @@ const travels = [
     img: "/travel-images/berlin.jpg",
     price: 720,
     companion: "Marco De Santis",
-    hotel: "Berlin City Lodge",
+    hotel: {
+      name: "Hotel Propeller Island City Lodge Center",
+      address: "Albrecht-Achilles-Straße 58 - 10709 Berlin, Germania",
+      phone: "+49 3089 190 160",
+      website: "Website not available",
+      image: "WIP",
+    },
   },
   {
     id: 6,
@@ -160,7 +190,13 @@ const travels = [
     img: "/travel-images/london.jpg",
     price: 950,
     companion: "Francesca Bianchi",
-    hotel: "Royal London Inn",
+    hotel: {
+      name: "Royal London",
+      address: "45 & 47 Shepherds Bush Road, London, W6 7LU, UK",
+      phone: "+44 20 7603 4280",
+      website: "https://sabahotels.com/royal-london/",
+      image: "WIP",
+    },
   },
   {
     id: 7,
@@ -187,7 +223,13 @@ const travels = [
     img: "/travel-images/dubai.jpg",
     price: 1600,
     companion: "Alessandro Villa",
-    hotel: "Desert Luxury Resort",
+    hotel: {
+      name: "Vida Dubai Mall",
+      address: "Downtown Dubai - Sheikh Mohammed bin Rashid Blvd, UAE",
+      phone: "+971 4 428 6888",
+      website: "https://www.vidahotels.com/",
+      image: "WIP",
+    },
   },
   {
     id: 8,
@@ -214,7 +256,13 @@ const travels = [
     img: "/travel-images/sydney.jpg",
     price: 3200,
     companion: "Giovanni Ricci",
-    hotel: "Sydney Harbour Hotel",
+    hotel: {
+      name: "Sydney Harbour Hotel",
+      address: "55 George St, The Rocks NSW 2000, Australia",
+      phone: "+61 2 9251 1234",
+      website: "https://www.sydneyharbourhotel.com/",
+      image: "WIP",
+    },
   },
   {
     id: 9,
@@ -241,7 +289,13 @@ const travels = [
     img: "/travel-images/rome.jpg",
     price: 400,
     companion: "Marco De Santis",
-    hotel: "Colosseum Suites",
+    hotel: {
+      name: "Colosseum Suites",
+      address: "Via Cavour 261, 00184 Roma, Italia",
+      phone: "+39 06 1234 5678",
+      website: "https://www.colosseumsuites.it/",
+      image: "WIP",
+    },
   },
   {
     id: 10,
@@ -268,7 +322,13 @@ const travels = [
     img: "/travel-images/bangkok.jpg",
     price: 1400,
     companion: "Alessandro Villa",
-    hotel: "Bangkok Palace Hotel",
+    hotel: {
+      name: "Bangkok Palace Hotel",
+      address: "1091/336 New Petchburi Rd, Bangkok 10400, Thailand",
+      phone: "+66 2 253 0511",
+      website: "https://www.bangkokpalace.com/",
+      image: "WIP",
+    },
   },
 ];
 

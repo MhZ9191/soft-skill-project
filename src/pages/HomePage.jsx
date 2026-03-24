@@ -44,7 +44,7 @@ export default function HomePage() {
                     </div>
                     <div className="mb-2">
                       <i className="bi bi-geo-alt me-2"></i>
-                      {travel.hotel}
+                      {travel.hotel.name}
                     </div>
                     <div>
                       <i className="bi bi-person-check me-2"></i>
