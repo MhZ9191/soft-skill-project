@@ -1,9 +1,6 @@
-import { useNewTrav } from "../contexts/newtravelerContext";
-import { Link } from "react-router";
+import { travels } from "../data/data";
 
 export default function HomePage() {
-  const { viaggi } = useNewTrav();
-
   // Funzione per formattare la data in stile italiano
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("it-IT");
@@ -12,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="container py-5">
       {/* Intestazione */}
-      <header className="d-flex justify-content-between align-items-center mb-5">
+      <header className="d-flex justify-content-between align-items-center mb-5 border-bottom pb-4">
         <div>
           <h1 className="fw-bold text-primary">I Miei Viaggi</h1>
           <p className="text-muted mb-0">
@@ -20,7 +17,6 @@ export default function HomePage() {
             partecipanti.
           </p>
         </div>
-        {/* BONUS: Bottone per aggiungere viaggio */}
         <button className="btn btn-success rounded-pill px-4 shadow-sm">
           <i className="bi bi-plus-lg me-2"></i> Nuovo Viaggio
         </button>
@@ -28,47 +24,52 @@ export default function HomePage() {
 
       {/* Griglia Viaggi */}
       <div className="row g-4">
-        {viaggi.map((travel) => (
+        {travels.map((travel) => (
           <div key={travel.id} className="col-12 col-md-6 col-lg-4">
-            <Link
-              to={`/traveldetail/${travel.id}`}
-              className="text-decoration-none"
-            >
-              <div className="card h-100 border-0 shadow-sm overflow-hidden transition-card">
-                {/* Contenuto Card */}
-                <div className="card-body">
-                  <h5 className="card-title fw-bold">{travel.to}</h5>
+            <div className="card h-100 border-0 shadow-sm overflow-hidden transition-card">
+              {/* Immagine */}
+              <img
+                src={travel.img}
+                className="card-img-top"
+                alt={travel.to}
+                style={{ height: "200px", objectFit: "cover" }}
+              />
 
-                  <div className="card-text small text-muted mb-4">
-                    <div className="mb-2">
-                      <i className="bi bi-calendar-event me-2"></i>
-                      {formatDate(travel.start)} - {formatDate(travel.end)}
-                    </div>
-                    <div className="mb-2">
-                      <i className="bi bi-geo-alt me-2"></i>
-                      {travel.hotel}
-                    </div>
-                    <div>
-                      <i className="bi bi-person-check me-2"></i>
-                      Accompagnatore: <strong>{travel.companion}</strong>
-                    </div>
+              {/* Contenuto Card */}
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title fw-bold text-dark">{travel.to}</h5>
+
+                <div className="card-text small text-muted mb-4">
+                  <div className="mb-2">
+                    <i className="bi bi-calendar-event me-2 text-primary"></i>
+                    {formatDate(travel.start)} - {formatDate(travel.end)}
                   </div>
-
-                  {/* Pulsante per entrare nel dettaglio (Rubrica) */}
-                  <button className="btn btn-outline-primary w-100 fw-semibold mt-auto">
-                    See more info
-                  </button>
+                  <div className="mb-2">
+                    <i className="bi bi-geo-alt me-2 text-primary"></i>
+                    {travel.hotel}
+                  </div>
+                  <div>
+                    <i className="bi bi-person-check me-2 text-primary"></i>
+                    Accompagnatore: <strong>{travel.companion}</strong>
+                  </div>
                 </div>
+
+                {/* Bottone */}
+                <button className="btn btn-outline-primary w-100 fw-semibold mt-auto">
+                  Apri Rubrica Contatti
+                </button>
               </div>
-            </Link>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Stile inline rapido per l'effetto hover (stile Boolean) */}
       <style>{`
-        .transition-card { transition: transform 0.3s ease; }
-        .transition-card:hover { transform: translateY(-5px); }
+        .transition-card { transition: all 0.3s ease; }
+        .transition-card:hover { 
+          transform: translateY(-5px); 
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
       `}</style>
     </div>
   );
