@@ -27,6 +27,25 @@ export default function TravelDetailPage() {
     navigate("/traveler/" + idUser.id);
   };
 
+  function languageToFlag(lang) {
+    switch (lang.toLowerCase()) {
+      case "Italiano":
+        return "🇮🇹";
+      case "Inglese":
+        return "🇬🇧";
+      case "Francese":
+        return "🇫🇷";
+      case "Spagnolo":
+        return "🇪🇸";
+      case "Tedesco":
+        return "🇩🇪";
+      case "Cinese":
+        return "🇨🇳";
+      default:
+        return "🏳️"; // bandiera bianca per lingua sconosciuta
+    }
+  }
+
   const removeUser = (currentUser) => {
     setViaggi(
       viaggi.map((el) => {
@@ -111,6 +130,10 @@ export default function TravelDetailPage() {
             </h5>
             {/* Valutiamo propic accompagnatore */}
             <p className="card-text">
+              <p>
+                <b>Lingue parlate: </b>{" "}
+                {travelDetail.companion.languages.join(", ")}
+              </p>
               <address className="card-text my-2">
                 <b>
                   <i class="bi bi-telephone-fill text-dark"></i> Telefono:

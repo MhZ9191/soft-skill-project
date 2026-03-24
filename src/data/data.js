@@ -23,7 +23,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000&auto=format&fit=crop",
     price: 850,
-    companion: { name: "Giovanni Ricci", phone: "+39 351 667 8904" },
+    companion: {
+      name: "Giovanni Ricci",
+      languages: ["Italiano", "Inglese", "Francese"],
+      phone: "+39 351 667 8904",
+    },
     hotel: {
       name: "Hotel Lumière",
       address: "110 Rue Damrémont - 75018 Paris, Francia",
@@ -56,7 +60,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop",
     price: 2100,
-    companion: { name: "Giovanni Ricci", phone: "+39 351 667 8904" },
+    companion: {
+      name: "Giovanni Ricci",
+      languages: ["Italiano", "Inglese", "Francese"],
+      phone: "+39 351 667 8904",
+    },
     hotel: {
       name: "Sakura Hotel",
       address: "3-43-15 Sendagi Bunkyo-ku - 113-0022 Tokyo, Japan",
@@ -88,7 +96,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1000&auto=format&fit=crop",
     price: 1800,
-    companion: { name: "Alessandro Villa", phone: "+39 333 712 4589" },
+    companion: {
+      name: "Alessandro Villa",
+      languages: ["Italiano", "Inglese", "Cinese", "Tedeisco"],
+      phone: "+39 333 712 4589",
+    },
     hotel: {
       name: "Manhattan Stay",
       address: "250 W 43rd St, New York, NY 10036, USA",
@@ -120,7 +132,11 @@ const travels = [
     ],
     img: "https://www.barcellona.org/wp-content/uploads/sites/14/barcellona-sagrada-familia-lontano.jpg",
     price: 600,
-    companion: { name: "Francesca Bianchi", phone: "+39 339 482 9901" },
+    companion: {
+      name: "Francesca Bianchi",
+      languages: ["Italiano", "Inglese", "Spagnolo", "Francese"],
+      phone: "+39 339 482 9901",
+    },
     hotel: {
       name: "Hotel Barcelona Center",
       address: "Balmes, 103 - 08008, Barcelona, Spain",
@@ -152,7 +168,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?q=80&w=1000&auto=format&fit=crop",
     price: 720,
-    companion: { name: "Marco De Santis", phone: "+39 320 456 7890" },
+    companion: {
+      name: "Marco De Santis",
+      languages: ["Italiano, Inglese"],
+      phone: "+39 320 456 7890",
+    },
     hotel: {
       name: "Hotel Propeller Island City Lodge Center",
       address: "Albrecht-Achilles-Straße 58 - 10709 Berlin, Germania",
@@ -184,7 +204,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000&auto=format&fit=crop",
     price: 950,
-    companion: { name: "Francesca Bianchi", phone: "+39 339 482 9901" },
+    companion: {
+      name: "Francesca Bianchi",
+      languages: ["Italiano", "Inglese", "Spagnolo", "Francese"],
+      phone: "+39 339 482 9901",
+    },
     hotel: {
       name: "Royal London",
       address: "45 & 47 Shepherds Bush Road, London, W6 7LU, UK",
@@ -216,7 +240,11 @@ const travels = [
     ],
     img: "https://www.doveclub.it/wp-content/uploads/2016/11/dubai3.jpg",
     price: 1600,
-    companion: { name: "Alessandro Villa", phone: "+39 333 712 4589" },
+    companion: {
+      name: "Alessandro Villa",
+      languages: ["Italiano", "Inglese", "Cinese", "Tedeisco"],
+      phone: "+39 333 712 4589",
+    },
     hotel: {
       name: "Vida Dubai Mall",
       address: "Downtown Dubai - Sheikh Mohammed bin Rashid Blvd, UAE",
@@ -248,7 +276,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1000&auto=format&fit=crop",
     price: 3200,
-    companion: { name: "Giovanni Ricci", phone: "+39 351 667 8904" },
+    companion: {
+      name: "Giovanni Ricci",
+      languages: ["Italiano", "Inglese", "Francese"],
+      phone: "+39 351 667 8904",
+    },
     hotel: {
       name: "Sydney Harbour Hotel",
       address: "55 George St, The Rocks NSW 2000, Australia",
@@ -280,7 +312,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1000&auto=format&fit=crop",
     price: 400,
-    companion: { name: "Marco De Santis", phone: "+39 320 456 7890" },
+    companion: {
+      name: "Marco De Santis",
+      languages: ["Italiano, Inglese"],
+      phone: "+39 320 456 7890",
+    },
     hotel: {
       name: "Colosseum Suites",
       address: "Via Cavour 261, 00184 Roma, Italia",
@@ -312,7 +348,11 @@ const travels = [
     ],
     img: "https://images.unsplash.com/photo-1510379872535-9310dc6fd6a7?q=80&w=1000&auto=format&fit=crop",
     price: 1400,
-    companion: { name: "Alessandro Villa", phone: "+39 333 712 4589" },
+    companion: {
+      name: "Alessandro Villa",
+      languages: ["Italiano", "Inglese", "Cinese", "Tedesco"],
+      phone: "+39 333 712 4589",
+    },
     hotel: {
       name: "Bangkok Palace Hotel",
       address: "1091/336 New Petchburi Rd, Bangkok 10400, Thailand",
