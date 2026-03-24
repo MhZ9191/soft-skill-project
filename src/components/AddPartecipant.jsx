@@ -3,7 +3,8 @@ import { useNewTrav } from "../contexts/newtravelerContext";
 
 export default function Addpartecipant({ idTravel }) {
   const [isHidden, setIsHidden] = useState(true);
-  const { setViaggiatori, createIdTraveler, viaggiatori } = useNewTrav();
+  const { setViaggiatori, createIdTraveler, viaggiatori, setViaggi, viaggi } =
+    useNewTrav();
 
   const changeHidden = () => {
     setIsHidden(!isHidden);
@@ -31,9 +32,24 @@ export default function Addpartecipant({ idTravel }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    user.id = createIdTraveler() + 1;
-    user.travel_id = idTravel;
-    setViaggiatori([...viaggiatori, user]);
+    const newUser = {
+      ...user,
+      id: createIdTraveler() + 1,
+      travel_id: idTravel,
+    };
+    setViaggiatori([...viaggiatori, newUser]);
+    const tmpUser = newUser.nome + " " + newUser.cognome;
+    setViaggi(
+      viaggi.map((v) => {
+        if (v.id === idTravel) {
+          return {
+            ...v,
+            travelers: [...v.travelers, tmpUser],
+          };
+        }
+        return v;
+      }),
+    );
     setUser(initData);
     changeHidden();
   };

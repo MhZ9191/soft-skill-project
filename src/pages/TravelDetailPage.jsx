@@ -6,7 +6,7 @@ import Addpartecipant from "../components/AddPartecipant";
 import { useNewTrav } from "../contexts/newtravelerContext";
 import { useState } from "react";
 export default function TravelDetailPage() {
-  const { viaggi, viaggiatori } = useNewTrav();
+  const { viaggi, viaggiatori, setSpecifyTravel, specifyTravel } = useNewTrav();
 
   // Funzione per formattare la data in stile italiano
   const navigate = useNavigate();
@@ -121,7 +121,7 @@ export default function TravelDetailPage() {
               );
             })}
           </div>
-          <Addpartecipant idTravel={id} />
+          <Addpartecipant idTravel={Number(id)} />
         </div>
       </div>
     </main>
