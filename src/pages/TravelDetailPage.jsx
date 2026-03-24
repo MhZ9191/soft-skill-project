@@ -130,16 +130,14 @@ export default function TravelDetailPage() {
             </h5>
             {/* Valutiamo propic accompagnatore */}
             <p className="card-text">
-              <p>
-                <b>Lingue parlate: </b>{" "}
-                {travelDetail.companion.languages.join(", ")}
-              </p>
-              <address className="card-text my-2">
-                <b>
-                  <i class="bi bi-telephone-fill text-dark"></i> Telefono:
-                </b>{" "}
-                {travelDetail.companion.phone}
-              </address>
+              <b>
+                <i class="bi bi-chat-dots-fill"></i> Lingue parlate:{" "}
+              </b>{" "}
+              {travelDetail.companion.languages.join(", ")} <br></br>
+              <b>
+                <i class="bi bi-telephone-fill text-dark"></i> Telefono:
+              </b>{" "}
+              {travelDetail.companion.phone}
             </p>
           </div>
         </div>
