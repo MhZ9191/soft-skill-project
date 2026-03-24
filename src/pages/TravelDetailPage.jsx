@@ -115,7 +115,11 @@ export default function TravelDetailPage() {
             <b>Partecipanti:</b>{" "}
             {travelDetail.travelers.map((el, i) => {
               return (
-                <div key={i} onClick={() => handlePage(el)}>
+                <div
+                  className="link-detail"
+                  key={i}
+                  onClick={() => handlePage(el)}
+                >
                   {el};
                 </div>
               );

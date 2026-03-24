@@ -5,7 +5,8 @@
 }
 
 /* ADDRESS-BOOK */
-.div-add:hover {
+.div-add:hover,
+.link-detail {
   cursor: pointer;
 }
 
