@@ -7,11 +7,12 @@ export default function DefaultLayout() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <div className="navbar-nav">
-            <Link className="nav-link" aria-current="page" to="/">
+          <span className="text-primary navbar-brand fs-3 fw-semibold">BooRoad</span>
+          <div className="navbar-nav ms-auto d-flex">
+            <Link className="nav-link fs-4 fw-medium" aria-current="page" to="/">
               Home
             </Link>
-            <Link className="nav-link" aria-current="page" to="/address-book">
+            <Link className="nav-link fs-4 fw-medium" aria-current="page" to="/address-book">
               Rubrica
             </Link>
           </div>

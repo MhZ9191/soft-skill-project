@@ -1,5 +1,5 @@
 import { useNewTrav } from "../contexts/newtravelerContext";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 export default function HomePage() {
   const { viaggi } = useNewTrav();
   // Funzione per formattare la data in stile italiano
@@ -12,7 +12,7 @@ export default function HomePage() {
       {/* Intestazione */}
       <header className="d-flex justify-content-between align-items-center mb-5 border-bottom pb-4">
         <div>
-          <h1 className="fw-bold text-primary">I Miei Viaggi</h1>
+          <h1 className="fw-bold text-primary">BooRoad Travel</h1>
           <p className="text-muted mb-0">
             Seleziona una destinazione per visualizzare i contatti dei
             partecipanti.
