@@ -80,3 +80,36 @@
 .bi-plus-square-fill {
   color: #0d6efd;
 }
+
+.navbar {
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #0099ff,
+    #9900ff
+  );
+
+  background-size: 300% 300%;
+  animation: spin 8s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

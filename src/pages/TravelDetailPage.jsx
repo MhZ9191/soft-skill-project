@@ -130,7 +130,7 @@ export default function TravelDetailPage() {
               return (
                 <div key={i} className="link-info-test">
                   <span className="link-detail" onClick={() => handlePage(el)}>
-                    {el};
+                    {el}
                   </span>
                   <div
                     className="bi bi-dash-square-fill"
