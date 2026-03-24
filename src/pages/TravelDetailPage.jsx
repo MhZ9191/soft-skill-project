@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router";
 import Addpartecipant from "../components/AddPartecipant";
 import { useNewTrav } from "../contexts/newtravelerContext";
-import { useState } from "react";
 export default function TravelDetailPage() {
   const { viaggi, viaggiatori, setViaggi } = useNewTrav();
 
@@ -89,13 +88,13 @@ export default function TravelDetailPage() {
                 <b>
                   <i className="bi bi-map-fill"></i> Indirizzo:
                 </b>{" "}
-                {travelDetail.hotel.address} <br></br>
+                {travelDetail.hotel?.address} <br></br>
                 <b>
                   <i className="bi bi-telephone-fill text-dark"></i> Telefono:
                 </b>{" "}
-                {travelDetail.hotel.phone}
+                {travelDetail.hotel?.phone}
               </address>
-              <Link to={travelDetail.hotel.website} className="card-link">
+              <Link to={travelDetail.hotel?.website} className="card-link">
                 Sito web
               </Link>
             </div>
@@ -118,11 +117,13 @@ export default function TravelDetailPage() {
               <b>
                 <i className="bi bi-chat-dots-fill"></i> Lingue parlate:{" "}
               </b>{" "}
-              {travelDetail.companion.languages.join(", ")} <br></br>
+              {travelDetail.companion.languages &&
+                travelDetail.companion.languages.join(", ")}{" "}
+              <br></br>
               <b>
                 <i className="bi bi-telephone-fill text-dark"></i> Telefono:
               </b>{" "}
-              {travelDetail.companion.phone}
+              {travelDetail.companion?.phone}
             </p>
           </div>
         </div>

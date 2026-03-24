@@ -98,7 +98,7 @@ const travels = [
     price: 1800,
     companion: {
       name: "Alessandro Villa",
-      languages: ["Italiano", "Inglese", "Cinese", "Tedeisco"],
+      languages: ["Italiano", "Inglese", "Cinese", "Tedesco"],
       phone: "+39 333 712 4589",
     },
     hotel: {

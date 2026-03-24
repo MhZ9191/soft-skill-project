@@ -87,9 +87,9 @@ export default function Addpartecipant({ idTravel }) {
               <input
                 className="form-control form-control-sm"
                 type="text"
-                id="nome"
-                name="nome"
-                value={user.nome}
+                id="name"
+                name="name"
+                value={user.name}
                 onChange={handleUser}
                 required
               />
