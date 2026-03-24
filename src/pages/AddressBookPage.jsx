@@ -17,7 +17,7 @@ export default function AddressBookPage() {
     const tempo = travelersSorted.filter(
       (el) =>
         el.cognome.toLowerCase().includes(search.toLowerCase()) ||
-        el.nome.toLowerCase().includes(search.toLowerCase()),
+        el.name.toLowerCase().includes(search.toLowerCase()),
     );
     setResults(tempo);
   };
@@ -57,7 +57,7 @@ export default function AddressBookPage() {
                       className="spec-span"
                       onClick={() => handleInfo(el.id)}
                     >
-                      {el.cognome} {el.nome}
+                      {el.cognome} {el.name}
                     </span>
                     <div
                       className={
