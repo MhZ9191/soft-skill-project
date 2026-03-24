@@ -45,27 +45,27 @@ export default function HomePage() {
 
                 <div className="card-text small text-muted mb-4">
                   <div className="mb-2">
-                    <i className="bi bi-calendar-event me-2 text-primary"></i>
+                    <i className="bi bi-calendar-event me-2"></i>
                     {formatDate(travel.start)} - {formatDate(travel.end)}
                   </div>
                   <div className="mb-2">
-                    <i className="bi bi-geo-alt me-2 text-primary"></i>
-                    {travel.hotel}
+                    <i className="bi bi-geo-alt me-2"></i>
+                    {travel.hotel.name}
                   </div>
                   <div>
-                    <i className="bi bi-person-check me-2 text-primary"></i>
+                    <i className="bi bi-person-check me-2"></i>
                     Accompagnatore: <strong>{travel.companion}</strong>
                   </div>
                 </div>
-
-                {/* Bottone */}
-                <Link
-                  className="btn btn-outline-primary mt-auto rounded-pill"
-                  to={`/traveldetail/${travel.id}`}
-                >
-                  Dettaglio Viaggio
-                </Link>
               </div>
+
+              {/* Bottone */}
+              <Link
+                className="btn btn-outline-primary mt-auto rounded-pill"
+                to={`/traveldetail/${travel.id}`}
+              >
+                Dettaglio Viaggio
+              </Link>
             </div>
           </div>
         ))}
@@ -76,8 +76,8 @@ export default function HomePage() {
         .transition-card:hover { 
           transform: translateY(-5px); 
           box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-        }
-      `}</style>
+          }
+          `}</style>
     </div>
   );
 }
