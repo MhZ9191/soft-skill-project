@@ -13,7 +13,7 @@ export default function Addpartecipant({ idTravel }) {
   const initData = {
     id: null,
     travel_id: null,
-    nome: "",
+    name: "",
     cognome: "",
     codice_fiscale: "",
     telefono: "",
@@ -38,7 +38,7 @@ export default function Addpartecipant({ idTravel }) {
       travel_id: idTravel,
     };
     setViaggiatori([...viaggiatori, newUser]);
-    const tmpUser = newUser.nome + " " + newUser.cognome;
+    const tmpUser = newUser.name + " " + newUser.cognome;
     setViaggi(
       viaggi.map((v) => {
         if (v.id === idTravel) {

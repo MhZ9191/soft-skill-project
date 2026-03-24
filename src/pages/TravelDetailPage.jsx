@@ -18,7 +18,7 @@ export default function TravelDetailPage() {
   if (!travelDetail) return <p>Viaggio non trovato!</p>;
 
   const unifyName = viaggiatori.map((el) => {
-    const unify = el.nome + " " + el.cognome;
+    const unify = el.name + " " + el.cognome;
     return { id: el.id, unify };
   });
 
