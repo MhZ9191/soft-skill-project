@@ -55,67 +55,106 @@ export default function Addpartecipant({ idTravel }) {
   };
 
   return (
-    <div>
-      <div></div>
-      <div className="new-part">
-        <label htmlFor="add-partecipant">Add New Partecipant</label>
-        <div onClick={changeHidden}>
+    <div className="container">
+      <div
+        className="d-flex justify-content-between align-items-center mb-2"
+        onClick={changeHidden}
+        style={{ cursor: "pointer" }}
+      >
+        <label
+          htmlFor="add-partecipant"
+          className="mb-0"
+          style={{ cursor: "pointer" }}
+        >
+          Aggiungi Partecipante:
+        </label>
+
+        <div className="text-primary">
           <i
-            className={
-              isHidden ? "bi bi-plus-square-fill" : "bi bi-dash-square-fill"
-            }
+            className={`fs-5 bi ${
+              isHidden ? "bi-plus-square-fill" : "bi-dash-square-fill"
+            }`}
           ></i>
         </div>
-        <div className={isHidden ? "hidden-info" : "visualize"}>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="nome">Nome</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              value={user.nome}
-              onChange={handleUser}
-              required
-            />
-            <label htmlFor="cognome">Cognome</label>
-            <input
-              type="text"
-              id="cognome"
-              name="cognome"
-              value={user.cognome}
-              onChange={handleUser}
-              required
-            />
-            <label htmlFor="codice_fiscale">Codice Fiscale</label>
-            <input
-              type="text"
-              id="codice_fiscale"
-              name="codice_fiscale"
-              value={user.codice_fiscale}
-              onChange={handleUser}
-              required
-            />
-            <label htmlFor="telefono">Telefono</label>
-            <input
-              type="text"
-              id="telefono"
-              name="telefono"
-              value={user.telefono}
-              onChange={handleUser}
-              required
-            />
-            <label htmlFor="mail">Mail</label>
-            <input
-              type="text"
-              id="mail"
-              name="mail"
-              value={user.mail}
-              onChange={handleUser}
-              required
-            />
-            <button>send</button>
-          </form>
-        </div>
+      </div>
+      <div className={isHidden ? "d-none" : "visualize pt-2 border-top"}>
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-6 mt-2">
+              <label className="form-label" htmlFor="nome">
+                Nome:
+              </label>
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="nome"
+                name="nome"
+                value={user.nome}
+                onChange={handleUser}
+                required
+              />
+            </div>
+            <div className="col-6 mt-2">
+              <label className="form-label" htmlFor="cognome">
+                Cognome:
+              </label>
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="cognome"
+                name="cognome"
+                value={user.cognome}
+                onChange={handleUser}
+                required
+              />
+            </div>
+            <div className="col-12 mt-2">
+              <label className="form-label" htmlFor="codice_fiscale">
+                Codice Fiscale:
+              </label>
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="codice_fiscale"
+                name="codice_fiscale"
+                value={user.codice_fiscale}
+                onChange={handleUser}
+                required
+              />
+            </div>
+            <div className="col-6 mt-2">
+              <label className="form-label" htmlFor="telefono">
+                Telefono:
+              </label>
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="telefono"
+                name="telefono"
+                value={user.telefono}
+                onChange={handleUser}
+                required
+              />
+            </div>
+            <div className="col-6 mt-2">
+              <label className="form-label" htmlFor="mail">
+                Mail:
+              </label>
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="mail"
+                name="mail"
+                value={user.mail}
+                onChange={handleUser}
+                required
+              />
+            </div>
+            <div className="col-12 mt-2">
+              <button className="btn btn-primary btn-sm">Invia</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
