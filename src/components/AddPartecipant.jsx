@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNewTrav } from "../contexts/newtravelerContext";
 
-export default function Addpartecipant() {
+export default function Addpartecipant({ idTravel }) {
   const [isHidden, setIsHidden] = useState(true);
-  const { setViaggiatori, createIdTraveler } = useNewTrav();
+  const { setViaggiatori, createIdTraveler, viaggiatori } = useNewTrav();
 
   const changeHidden = () => {
     setIsHidden(!isHidden);
@@ -32,8 +32,8 @@ export default function Addpartecipant() {
   const handleSubmit = (e) => {
     e.preventDefault();
     user.id = createIdTraveler() + 1;
-    //recupero id travel
-    setViaggiatori(user);
+    user.travel_id = idTravel;
+    setViaggiatori([...viaggiatori, user]);
     setUser(initData);
     changeHidden();
   };

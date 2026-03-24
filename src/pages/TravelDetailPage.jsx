@@ -2,7 +2,12 @@
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router";
 import { travels, travelers } from "../data/data";
+import Addpartecipant from "../components/AddPartecipant";
+import { useNewTrav } from "../contexts/newtravelerContext";
+import { useState } from "react";
 export default function TravelDetailPage() {
+  const { viaggi, viaggiatori } = useNewTrav();
+
   // Funzione per formattare la data in stile italiano
   const navigate = useNavigate();
   const formatDate = (dateString) => {
@@ -10,10 +15,10 @@ export default function TravelDetailPage() {
   };
 
   const { id } = useParams();
-  const travelDetail = travels.find((travel) => travel.id === Number(id));
+  const travelDetail = viaggi.find((travel) => travel.id === Number(id));
   if (!travelDetail) return <p>Viaggio non trovato!</p>;
 
-  const unifyName = travelers.map((el) => {
+  const unifyName = viaggiatori.map((el) => {
     const unify = el.nome + " " + el.cognome;
     return { id: el.id, unify };
   });
@@ -107,7 +112,6 @@ export default function TravelDetailPage() {
           </h5>
 
           <div className="card-text">
-            {/* <b>Partecipanti:</b> {travelDetail.travelers.join(", ")} */}
             <b>Partecipanti:</b>{" "}
             {travelDetail.travelers.map((el, i) => {
               return (
@@ -117,6 +121,7 @@ export default function TravelDetailPage() {
               );
             })}
           </div>
+          <Addpartecipant idTravel={id} />
         </div>
       </div>
     </main>

@@ -26,7 +26,7 @@ export default function AddTravel() {
   const submitNewTravel = (e) => {
     e.preventDefault();
     let newIdTravel = createIdTravel() + 1;
-    setViaggi([...viaggi, { ...fields, id: newIdTravel }]);
+    setViaggi([...viaggi, { ...fields, id: newIdTravel, travelers: [] }]);
     setFields(initData);
   };
 

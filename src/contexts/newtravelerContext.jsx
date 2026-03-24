@@ -12,7 +12,7 @@ function NewTravProvider({ children }) {
   };
 
   const createIdTraveler = () => {
-    const idt = viaggiatori.map((el) => el.id);
+    const idt = viaggiatori?.map((el) => el.id);
     return Math.max(...idt);
   };
 
@@ -21,6 +21,7 @@ function NewTravProvider({ children }) {
     createIdTraveler,
     setViaggi,
     viaggi,
+    viaggiatori,
     setViaggiatori,
   };
   return (
