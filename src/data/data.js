@@ -455,4 +455,6 @@ const travelers = [
   },
 ];
 
-export { travels, travelers };
+const companions = [...new Set(travels.map((el) => el.companion))];
+
+export { travels, travelers, companions };

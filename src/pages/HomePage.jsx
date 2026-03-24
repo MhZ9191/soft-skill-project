@@ -1,6 +1,8 @@
 import { travels, travelers } from "../data/data";
-
+import { useNewTrav } from "../contexts/newtravelerContext";
 export default function HomePage() {
+  const { viaggi } = useNewTrav();
+
   // Funzione per formattare la data in stile italiano
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("it-IT");
@@ -25,7 +27,7 @@ export default function HomePage() {
 
       {/* Griglia Viaggi */}
       <div className="row g-4">
-        {travels.map((travel) => (
+        {viaggi.map((travel) => (
           <div key={travel.id} className="col-12 col-md-6 col-lg-4">
             <div className="card h-100 border-0 shadow-sm overflow-hidden transition-card">
               {/* Contenuto Card */}

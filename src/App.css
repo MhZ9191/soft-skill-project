@@ -23,3 +23,8 @@
 .bi {
   cursor: pointer;
 }
+
+.new-part {
+  display: flex;
+  gap: 30px;
+}

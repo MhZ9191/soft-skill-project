@@ -39,13 +39,14 @@ export default function AddressBookPage() {
       <section>
         <div>
           <fieldset className="field-search">
-            <legend>Search filter</legend>
+            <legend>Search</legend>
             <input
               type="text"
               name="search"
               id="search-filter"
               value={search}
               onChange={handleSearch}
+              placeholder="Type here"
             />
           </fieldset>
           <div>
