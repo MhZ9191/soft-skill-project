@@ -1158,6 +1158,6 @@ const travelers = [
   },
 ];
 
-const companions = [...new Set(travels.map((el) => el.companion))];
+const companions = [...new Set(travels.map((el) => el.companion.name))];
 
 export { travels, travelers, companions };
