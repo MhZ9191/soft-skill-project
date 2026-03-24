@@ -75,6 +75,7 @@ export default function Addpartecipant({ idTravel }) {
               name="nome"
               value={user.nome}
               onChange={handleUser}
+              required
             />
             <label htmlFor="cognome">Cognome</label>
             <input
@@ -83,6 +84,7 @@ export default function Addpartecipant({ idTravel }) {
               name="cognome"
               value={user.cognome}
               onChange={handleUser}
+              required
             />
             <label htmlFor="codice_fiscale">Codice Fiscale</label>
             <input
@@ -91,6 +93,7 @@ export default function Addpartecipant({ idTravel }) {
               name="codice_fiscale"
               value={user.codice_fiscale}
               onChange={handleUser}
+              required
             />
             <label htmlFor="telefono">Telefono</label>
             <input
@@ -99,6 +102,7 @@ export default function Addpartecipant({ idTravel }) {
               name="telefono"
               value={user.telefono}
               onChange={handleUser}
+              required
             />
             <label htmlFor="mail">Mail</label>
             <input
@@ -107,6 +111,7 @@ export default function Addpartecipant({ idTravel }) {
               name="mail"
               value={user.mail}
               onChange={handleUser}
+              required
             />
             <button>send</button>
           </form>

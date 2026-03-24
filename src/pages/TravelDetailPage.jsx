@@ -1,12 +1,11 @@
 // Imports
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router";
-import { travels, travelers } from "../data/data";
 import Addpartecipant from "../components/AddPartecipant";
 import { useNewTrav } from "../contexts/newtravelerContext";
 import { useState } from "react";
 export default function TravelDetailPage() {
-  const { viaggi, viaggiatori, setSpecifyTravel, specifyTravel } = useNewTrav();
+  const { viaggi, viaggiatori, setViaggi } = useNewTrav();
 
   // Funzione per formattare la data in stile italiano
   const navigate = useNavigate();
@@ -26,6 +25,20 @@ export default function TravelDetailPage() {
   const handlePage = (nome) => {
     const idUser = unifyName.find((el) => el.unify === nome);
     navigate("/traveler/" + idUser.id);
+  };
+
+  const removeUser = (currentUser) => {
+    setViaggi(
+      viaggi.map((el) => {
+        if (el.id === travelDetail.id) {
+          return {
+            ...el,
+            travelers: el.travelers.filter((ele) => ele !== currentUser),
+          };
+        }
+        return el;
+      }),
+    );
   };
 
   return (
@@ -115,12 +128,14 @@ export default function TravelDetailPage() {
             <b>Partecipanti:</b>{" "}
             {travelDetail.travelers.map((el, i) => {
               return (
-                <div
-                  className="link-detail"
-                  key={i}
-                  onClick={() => handlePage(el)}
-                >
-                  {el};
+                <div key={i} className="link-info-test">
+                  <span className="link-detail" onClick={() => handlePage(el)}>
+                    {el};
+                  </span>
+                  <div
+                    className="bi bi-dash-square-fill"
+                    onClick={() => removeUser(el)}
+                  ></div>
                 </div>
               );
             })}
