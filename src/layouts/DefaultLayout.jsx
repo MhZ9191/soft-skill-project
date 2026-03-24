@@ -7,14 +7,12 @@ export default function DefaultLayout() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <div className="navbar-nav">
-            <Link className="nav-link" aria-current="page" to="/">
+          <Link to="/" className="text-primary navbar-brand fs-3 fw-semibold">BooRoad</Link>
+          <div className="navbar-nav ms-auto d-flex">
+            <Link className="nav-link fs-4 fw-medium" aria-current="page" to="/">
               Home
             </Link>
-            <Link className="nav-link" aria-current="page" to="/TravelPage">
-              Viaggi
-            </Link>
-            <Link className="nav-link" aria-current="page" to="/address-book">
+            <Link className="nav-link fs-4 fw-medium" aria-current="page" to="/address-book">
               Rubrica
             </Link>
           </div>
@@ -24,6 +22,27 @@ export default function DefaultLayout() {
       <main className="container mt-4">
         <Outlet />
       </main>
+      <footer className="bg-dark text-white py-4 mt-5">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h5 className="text-primary">BooRoad</h5>
+              <p className="small text-secondary">
+                Viaggia lontano, vivi davvero.
+              </p>
+            </div>
+            <div className="col text-end">
+              <p className="small text-secondary">
+                &copy; {new Date().getFullYear()} BooRoad Inc. Tutti i diritti riservati.
+              </p>
+              <div className="mt-2">
+                <Link to="#" className="text-white-50 text-decoration-none me-3 small">Privacy</Link>
+                <Link to="#" className="text-white-50 text-decoration-none small">Termini</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

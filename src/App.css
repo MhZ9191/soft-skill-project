@@ -5,7 +5,8 @@
 }
 
 /* ADDRESS-BOOK */
-.div-add:hover {
+.div-add:hover,
+.link-detail {
   cursor: pointer;
 }
 
@@ -17,9 +18,98 @@
   display: none;
 }
 .visualize {
-  display: block;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bi {
   cursor: pointer;
+}
+
+.new-part {
+  display: flex;
+  gap: 30px;
+}
+
+.div-add {
+  width: 30%;
+  margin-top: 15px;
+  border: 1px #0d6efd solid;
+  padding: 10px;
+  border-radius: 12px;
+  color: #0d6efd;
+}
+
+.field-search input {
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.field-search input:focus {
+  outline: none;
+  border: 2px #0d6efd solid;
+}
+
+.div-add:hover {
+  box-shadow: 0 0 6px #0d6efd;
+}
+
+.address-sec {
+  padding: 20px;
+  color: #0d6efd;
+}
+
+.bi-telephone-fill {
+  color: #0d6efd;
+}
+
+.spec-span {
+  display: block;
+}
+
+.link-info-test {
+  display: flex;
+  gap: 10px;
+}
+
+.bi-dash-square-fill {
+  color: #0d6efd;
+}
+
+.bi-plus-square-fill {
+  color: #0d6efd;
+}
+
+.navbar {
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #0099ff,
+    #9900ff
+  );
+
+  background-size: 300% 300%;
+  animation: spin 14s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

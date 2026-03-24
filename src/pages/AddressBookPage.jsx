@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { travelers } from "../data/data";
-import AddTravel from "../components/AddTravel";
 
 export default function AddressBookPage() {
   const travelersSorted = [...travelers];
@@ -36,28 +35,28 @@ export default function AddressBookPage() {
 
   return (
     <main>
-      <section>
+      <section className="address-sec">
         <div>
           <fieldset className="field-search">
-            <legend>Search filter</legend>
+            <legend>Search</legend>
             <input
               type="text"
               name="search"
               id="search-filter"
               value={search}
               onChange={handleSearch}
+              placeholder="Type here"
             />
           </fieldset>
           <div>
             {results &&
               results.map((el) => {
                 return (
-                  <div
-                    className="div-add"
-                    key={el.id}
-                    onClick={() => handleInfo(el.id)}
-                  >
-                    <span>
+                  <div className="div-add" key={el.id}>
+                    <span
+                      className="spec-span"
+                      onClick={() => handleInfo(el.id)}
+                    >
                       {el.cognome} {el.nome}
                     </span>
                     <div
@@ -76,7 +75,6 @@ export default function AddressBookPage() {
                 );
               })}
           </div>
-          <AddTravel />
         </div>
       </section>
     </main>

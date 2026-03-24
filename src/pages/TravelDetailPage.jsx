@@ -1,17 +1,45 @@
 // Imports
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router";
-import { travels } from "../data/data";
-
+import Addpartecipant from "../components/AddPartecipant";
+import { useNewTrav } from "../contexts/newtravelerContext";
+import { useState } from "react";
 export default function TravelDetailPage() {
+  const { viaggi, viaggiatori, setViaggi } = useNewTrav();
+
   // Funzione per formattare la data in stile italiano
+  const navigate = useNavigate();
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("it-IT");
   };
 
   const { id } = useParams();
-  const travelDetail = travels.find((travel) => travel.id === Number(id));
+  const travelDetail = viaggi.find((travel) => travel.id === Number(id));
   if (!travelDetail) return <p>Viaggio non trovato!</p>;
+
+  const unifyName = viaggiatori.map((el) => {
+    const unify = el.nome + " " + el.cognome;
+    return { id: el.id, unify };
+  });
+
+  const handlePage = (nome) => {
+    const idUser = unifyName.find((el) => el.unify === nome);
+    navigate("/traveler/" + idUser.id);
+  };
+
+  const removeUser = (currentUser) => {
+    setViaggi(
+      viaggi.map((el) => {
+        if (el.id === travelDetail.id) {
+          return {
+            ...el,
+            travelers: el.travelers.filter((ele) => ele !== currentUser),
+          };
+        }
+        return el;
+      }),
+    );
+  };
 
   return (
     <main className="container py-5">
@@ -97,9 +125,23 @@ export default function TravelDetailPage() {
             <b>Numero partecipanti:</b> {travelDetail.travelers.length}
           </h5>
 
-          <p className="card-text">
-            <b>Partecipanti:</b> {travelDetail.travelers.join(", ")}
-          </p>
+          <div className="card-text">
+            <b>Partecipanti:</b>{" "}
+            {travelDetail.travelers.map((el, i) => {
+              return (
+                <div key={i} className="link-info-test">
+                  <span className="link-detail" onClick={() => handlePage(el)}>
+                    {el}
+                  </span>
+                  <div
+                    className="bi bi-dash-square-fill"
+                    onClick={() => removeUser(el)}
+                  ></div>
+                </div>
+              );
+            })}
+          </div>
+          <Addpartecipant idTravel={Number(id)} />
         </div>
       </div>
     </main>

@@ -1,25 +1,39 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage";
-import Travelpage from "./pages/TravelPage";
 import TravelerDetailPage from "./pages/TravelerDetailPage";
 import TravelDetailPage from "./pages/TravelDetailPage";
 import AddressBookPage from "./pages/AddressBookPage";
+import AddTravel from "./components/AddTravel";
 import DefaultLayout from "./layouts/DefaultLayout";
+import { NewTravProvider } from "./contexts/newtravelerContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route Component={DefaultLayout}>
-          <Route index element={<HomePage />} />
-          <Route path="/:id" element={<Travelpage />} />
-          <Route path="/address-book" element={<AddressBookPage />} />
-          <Route path="/traveldetail/:id" element={<TravelDetailPage />} />
-          <Route path="/traveler/:id" element={<TravelDetailPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //     <Routes>
+    //       <Route Component={DefaultLayout}>
+    //         <Route index element={<HomePage />} />
+    //         <Route path="/:id" element={<Travelpage />} />
+    //         <Route path="/address-book" element={<AddressBookPage />} />
+    //         <Route path="/traveler/:id" element={<TravelerDetailPage />} />
+    //       </Route>
+    //     </Routes>
+    //   </BrowserRouter>
+
+    <NewTravProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultLayout}>
+            <Route index element={<HomePage />} />
+            <Route path="/address-book" element={<AddressBookPage />} />
+            <Route path="/traveldetail/:id" element={<TravelDetailPage />} />
+            <Route path="/traveler/:id" element={<TravelerDetailPage />} />
+            <Route path="/add-travel" element={<AddTravel />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </NewTravProvider>
   );
 }

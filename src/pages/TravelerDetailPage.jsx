@@ -1,12 +1,13 @@
 import { useParams } from "react-router";
-import { travelers } from "../data/data";
-
+import { useNewTrav } from "../contexts/newtravelerContext";
 export default function TravelerDetailPage() {
   // recupero l'id
   const { id } = useParams();
 
+  const { viaggiatori } = useNewTrav();
+
   //Recupero il singolo viaggiatore dall'array tramite l'ID ottenuto dai parametri
-  const travelerDetail = travelers.find((traveler) => traveler.id == id);
+  const travelerDetail = viaggiatori.find((traveler) => traveler.id == id);
 
   // se non trovo il viaggiatore ritorno "viaggiatore non trovato"
   if (!travelerDetail) return <p>Viaggiatore non trovato!</p>;
@@ -28,6 +29,7 @@ export default function TravelerDetailPage() {
               <div className="mb-3 d-flex align-items-center">
                 <div>
                   <label className="text-muted small d-block">Telefono</label>
+                  <i class="bi bi-telephone p-2 pe-none"></i>
                   <span className="fw-medium">{travelerDetail.telefono}</span>
                 </div>
               </div>
@@ -39,6 +41,7 @@ export default function TravelerDetailPage() {
                   <label className="text-muted small d-block">
                     Codice Fiscale
                   </label>
+                  <i class="bi bi-file-person p-2 pe-none"></i>
                   <span className="fw-medium text-uppercase">
                     {travelerDetail.codice_fiscale}
                   </span>
@@ -50,6 +53,7 @@ export default function TravelerDetailPage() {
               <div className="mb-0 d-flex align-items-center">
                 <div>
                   <label className="text-muted small d-block">Email</label>
+                  <i class="bi bi-envelope p-2 pe-none"></i>
                   <span className="fw-medium">{travelerDetail.mail}</span>
                 </div>
               </div>
