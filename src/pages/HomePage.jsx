@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { travels } from "../data/data";
 
 export default function HomePage() {
@@ -17,9 +18,12 @@ export default function HomePage() {
             partecipanti.
           </p>
         </div>
-        <button className="btn btn-success rounded-pill px-4 shadow-sm">
+        <Link
+          to="/add-travel"
+          className="btn btn-success rounded-pill px-4 shadow-sm"
+        >
           <i className="bi bi-plus-lg me-2"></i> Nuovo Viaggio
-        </button>
+        </Link>
       </header>
 
       {/* Griglia Viaggi */}

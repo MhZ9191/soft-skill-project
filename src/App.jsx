@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import TravelerDetailPage from "./pages/TravelerDetailPage";
 import TravelDetailPage from "./pages/TravelDetailPage";
 import AddressBookPage from "./pages/AddressBookPage";
+import AddTravel from "./components/AddTravel";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { NewTravProvider } from "./contexts/newtravelerContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/address-book" element={<AddressBookPage />} />
             <Route path="/traveldetail/:id" element={<TravelDetailPage />} />
             <Route path="/traveler/:id" element={<TravelerDetailPage />} />
+            <Route path="/add-travel" element={<AddTravel />} />
           </Route>
         </Routes>
       </BrowserRouter>
