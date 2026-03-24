@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { travelers } from "../data/data";
 import AddTravel from "../components/AddTravel";
+import Addpartecipant from "../components/AddPartecipant";
 
 export default function AddressBookPage() {
   const travelersSorted = [...travelers];
@@ -78,6 +79,7 @@ export default function AddressBookPage() {
               })}
           </div>
           <AddTravel />
+          <Addpartecipant />
         </div>
       </section>
     </main>

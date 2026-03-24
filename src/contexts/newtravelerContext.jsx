@@ -11,7 +11,18 @@ function NewTravProvider({ children }) {
     return Math.max(...ids);
   };
 
-  const values = { createIdTravel, setViaggi, viaggi };
+  const createIdTraveler = () => {
+    const idt = viaggiatori.map((el) => el.id);
+    return Math.max(...idt);
+  };
+
+  const values = {
+    createIdTravel,
+    createIdTraveler,
+    setViaggi,
+    viaggi,
+    setViaggiatori,
+  };
   return (
     <NewTravelerContext.Provider value={values}>
       {children}
