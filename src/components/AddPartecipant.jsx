@@ -142,7 +142,7 @@ export default function Addpartecipant({ idTravel }) {
               </label>
               <input
                 className="form-control form-control-sm"
-                type="text"
+                type="email"
                 id="mail"
                 name="mail"
                 value={user.mail}
