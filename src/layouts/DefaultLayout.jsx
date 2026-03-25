@@ -8,18 +8,19 @@ export default function DefaultLayout() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link to="/" className="text-primary navbar-brand fs-3 fw-semibold">
+          <i className="bi bi-airplane text-primary me-2"></i>
             BooRoad
           </Link>
           <div className="navbar-nav ms-auto d-flex">
             <Link
-              className="nav-link fs-4 fw-medium"
+              className="nav-link fs-4 fw-bold text-primary px-3"
               aria-current="page"
               to="/"
             >
               Home
             </Link>
             <Link
-              className="nav-link fs-4 fw-medium"
+              className="nav-link fs-4 fw-bold text-primary px-3"
               aria-current="page"
               to="/address-book"
             >
