@@ -14,8 +14,7 @@ export default function HomePage() {
         <div>
           <h1 className="fw-bold text-primary">BooRoad Travel</h1>
           <p className="text-muted mb-0">
-            Seleziona una destinazione per visualizzare i contatti dei
-            partecipanti.
+            Seleziona una destinazione per visualizzare i contatti del viaggio.
           </p>
         </div>
         <Link
