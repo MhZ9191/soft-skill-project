@@ -14,18 +14,48 @@ export default function AddTravel() {
     image: "", // Questo campo raccoglierà l'URL dell'immagine
     price: "",
     companion: companions[0] || "",
-    hotel: "",
+    hotel: { name: "" },
   };
 
   const [fields, setFields] = useState(initData);
-
   const handleFields = (e) => {
     const { name, value } = e.target;
-    setFields({
-      ...fields,
-      [name]: value,
-    });
+
+    if (name === "hotel") {
+      setFields({
+        ...fields,
+        hotel: {
+          ...fields.hotel,
+          name: value,
+        },
+      });
+    } else if (name === "companion") {
+      setFields({
+        ...fields,
+        companion: {
+          ...fields.companion,
+          name: value,
+        },
+      });
+    } else {
+      setFields({
+        ...fields,
+        [name]: value,
+      });
+    }
   };
+  // const handleFields = (e) => {
+  //   const { name, value } = e.target;
+
+  //   if(name==="hotel"){
+  //     setFields(...fields,hotel:{...fields.hotel,name:value});
+  //   }
+
+  //   setFields({
+  //     ...fields,
+  //     [name]: value,
+  //   });
+  // };
 
   const submitNewTravel = (e) => {
     e.preventDefault();
@@ -144,7 +174,7 @@ export default function AddTravel() {
                     id="hotel"
                     name="hotel"
                     onChange={handleFields}
-                    value={fields.hotel}
+                    value={fields.hotel.name}
                     required
                   />
                 </div>
@@ -160,7 +190,7 @@ export default function AddTravel() {
                   onChange={handleFields}
                   id="companion"
                   name="companion"
-                  value={fields.companion}
+                  value={fields.companion.name}
                 >
                   {companions.map((el, i) => (
                     <option key={i} value={el}>
