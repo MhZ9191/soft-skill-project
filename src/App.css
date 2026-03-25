@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-weight: 800; 
+  font-variation-settings: "wdth" 100;
+}
+
 /* ADDRESS-BOOK */
 .div-add:hover,
 .link-detail {
