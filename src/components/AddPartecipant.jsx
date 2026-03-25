@@ -16,7 +16,7 @@ export default function Addpartecipant({ idTravel }) {
     name: "",
     cognome: "",
     codice_fiscale: "",
-    telefono: "",
+    phone: "",
     mail: "",
   };
 
@@ -129,9 +129,9 @@ export default function Addpartecipant({ idTravel }) {
               <input
                 className="form-control form-control-sm"
                 type="text"
-                id="telefono"
-                name="telefono"
-                value={user.telefono}
+                id="phone"
+                name="phone"
+                value={user.phone}
                 onChange={handleUser}
                 required
               />
