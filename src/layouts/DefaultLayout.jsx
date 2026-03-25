@@ -7,7 +7,7 @@ export default function DefaultLayout() {
     <div className="d-flex flex-column min-vh-100">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link to="/" className="text-primary navbar-brand fs-3 fw-semibold">
+          <Link to="/" className="text-primary navbar-brand fs-3 fw-bold">
           <i className="bi bi-airplane text-primary me-2"></i>
             BooRoad
           </Link>
